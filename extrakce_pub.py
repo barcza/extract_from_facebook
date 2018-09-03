@@ -10,7 +10,7 @@ graph = facebook.GraphAPI(access_token=token, version="2.7")
 def get_data():
     #stáhnu data a oprostím je od závěrečných blábolů o paginaci
     #fetches the data and deletes the pagination info from the end
-    post4 = graph.get_object("yourfeed", fields="message,created_time,type,shares,likes.summary(true).limit(0),comments.summary(true).limit(0)", limit=5) #replace "yourfeed" with the name of your feed, also set your limit to whatever, or delete it if you want all the posts
+    post4 = graph.get_object("yourfeed", fields="message,created_time,type,shares,reactions.summary(true).limit(0),comments.summary(true).limit(0)", limit=5) #replace "yourfeed" with the name of your feed, also set your limit to whatever, or delete it if you want all the posts
 
 
     post_list = []
